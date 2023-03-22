@@ -1,5 +1,5 @@
 .login-page {
-  height: 100vh;
+  height:inherit;
   background-color: #f2f5ff;
   font-family: "Inter", sans-serif;
 }
@@ -61,4 +61,10 @@
 .text-center h6 a {
   text-decoration: none;
   font-weight: bold;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
 }

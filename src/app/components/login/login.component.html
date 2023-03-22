@@ -14,39 +14,71 @@
 
     <div class="row justify-content-center py-4">
       <div class="col-lg-4 col-md-6 col-sm-8" id="form-container">
-        <!-- <form [formGroup]="loginForm" (ngSubmit)="onSubmit()"> -->
-        <div class="form-group">
-          <h4 id="sign-in">Sign In</h4>
-          <h6 id="sing-in-text">
-            Insira sua credenciais para acessar sua conta
-          </h6>
-          <input
-            type="email"
-            class="form-control"
-            id="inputEmail"
-            placeholder="Informe seu e-mail"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <input
-            type="password"
-            class="form-control"
-            id="inputPassword"
-            placeholder="Informe sua senha"
-            required
-          />
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
-        <!-- </form> -->
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <h4 id="sign-in">Sign In</h4>
+            <h6 id="sing-in-text">
+              Insira sua credenciais para acessar sua conta
+            </h6>
+            <input
+              type="email"
+              class="form-control"
+              id="inputEmail"
+              formControlName="email"
+              placeholder="Informe seu e-mail"
+              required
+            />
+            <div
+              *ngIf="
+                loginForm.get('email')?.touched &&
+                loginForm.get('email')?.invalid
+              "
+              class="error-message"
+            >
+              Campo e-mail é obrigatório
+            </div>
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              class="form-control"
+              id="inputPassword"
+              formControlName="password"
+              placeholder="Informe sua senha"
+              required
+            />
+          </div>
+          <div
+            *ngIf="
+              loginForm.get('password')?.touched &&
+              loginForm.get('password')?.invalid
+            "
+            class="error-message"
+          >
+            Campo senha é obrigatório
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Entrar
+          </button>
+        </form>
       </div>
     </div>
 
     <div class="row justify-content-center py-2">
       <div class="col-lg-4 col-md-6 col-sm-8">
         <div class="text-center">
-          <h6>Esqueceu sua senha? <a href="#" class="text-muted mr-2"><span style ="color: #277FFE">Redefinir senha</span></a></h6>  
-          <h6>Ainda não tem uma conta? <a href="#" class="text-muted"><span style ="color: #277FFE">Cadastre-se</span></a></h6>
+          <h6>
+            Esqueceu sua senha?
+            <a routerLink="/forgot-password" class="text-muted mr-2"
+              ><span style="color: #277ffe">Redefinir senha</span></a
+            >
+          </h6>
+          <h6>
+            Ainda não tem uma conta?
+            <a routerLink="/register-new-user" class="text-muted"
+              ><span style="color: #277ffe">Cadastre-se</span></a
+            >
+          </h6>
         </div>
       </div>
     </div>
