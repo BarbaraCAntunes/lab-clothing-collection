@@ -1,0 +1,54 @@
+<div class="login-page">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-sm-4 col-md-3 text-center" id="div-logo-audaces">
+        <img
+          src="../assets/logo-audaces.png"
+          alt="Audaces"
+          title="Audaces"
+          class="img-fluid"
+          id="logo-audaces"
+        />
+      </div>
+    </div>
+
+    <div class="row justify-content-center py-4">
+      <div class="col-lg-4 col-md-6 col-sm-8" id="form-container">
+        <!-- <form [formGroup]="loginForm" (ngSubmit)="onSubmit()"> -->
+        <div class="form-group">
+          <h4 id="sign-in">Sign In</h4>
+          <h6 id="sing-in-text">
+            Insira sua credenciais para acessar sua conta
+          </h6>
+          <input
+            type="email"
+            class="form-control"
+            id="inputEmail"
+            placeholder="Informe seu e-mail"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            class="form-control"
+            id="inputPassword"
+            placeholder="Informe sua senha"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+        <!-- </form> -->
+      </div>
+    </div>
+
+    <div class="row justify-content-center py-2">
+      <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="text-center">
+          <h6>Esqueceu sua senha? <a href="#" class="text-muted mr-2"><span style ="color: #277FFE">Redefinir senha</span></a></h6>  
+          <h6>Ainda não tem uma conta? <a href="#" class="text-muted"><span style ="color: #277FFE">Cadastre-se</span></a></h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
