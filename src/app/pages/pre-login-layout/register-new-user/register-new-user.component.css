@@ -1,0 +1,79 @@
+.register-new-user-page {
+  min-height: 100vh;
+  background-color: #f2f5ff;
+  font-family: "Inter", sans-serif;
+}
+
+#logo-audaces {
+  max-width: 35px;
+  margin-top: 4%;
+}
+
+#div-logo-audaces {
+  width: 100%;
+}
+
+#form-container {
+  background-color: white;
+  padding: 4%;
+  border-radius: 10px;
+}
+
+.form-group h4 {
+  color: #304C71;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 2%;
+}
+
+.form-group h6 {
+  color: #B4B6C1;
+  font-weight: 400;
+  font-size: 86%;
+  padding-bottom: 5%;
+  text-align: center;
+}
+
+.form-group input {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-color: #f2f5ff;
+}
+
+.form-group input::placeholder {
+  color: #B4B6C1;
+  font-size: 85%;
+}
+
+.btn {
+  background-color: #0073CF;
+  width: 100%;
+  font-weight: bold;
+  margin-top: 5%;
+  padding: 3%;
+}
+
+.text-center h6 {
+  color: #989898;
+  font-size: 86%;
+}
+
+.text-center h6 a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.password-inputs {
+  display: flex;
+  flex-direction: row;
+  gap: 3%;
+  padding-bottom: 4%;
+}
+
+
