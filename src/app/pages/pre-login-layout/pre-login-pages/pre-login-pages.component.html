@@ -1,0 +1,13 @@
+<div class="pre-login-pages">
+  <ng-container *ngIf="path === '' || path === 'login'; else otherRoutes">
+    <app-login></app-login>
+  </ng-container>
+  <ng-template #otherRoutes>
+    <div *ngIf="path === 'register-new-user'" class="main-content">
+      <app-register-new-user></app-register-new-user>
+    </div>
+    <div *ngIf="path === 'forgot-password'" class="main-content">
+      <app-forgot-password></app-forgot-password>
+    </div>
+  </ng-template>
+</div>
