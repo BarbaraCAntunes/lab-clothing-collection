@@ -1,0 +1,58 @@
+.container-fluid {
+  min-height: 100vh;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: #f2f5ff;
+}
+
+.row {
+  flex-wrap: nowrap;
+  height: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.side-bar {
+  min-width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.content {
+  position: relative;
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  height: 100%;
+  overflow: hidden;
+}
+
+.main-content-wrapper {
+  margin-top: 95px;
+  overflow-y: auto;
+  height: calc(100% - 95px);
+}
+
+@media (max-width: 768px) {
+  .side-bar {
+    position: absolute;
+    z-index: 100;
+    min-width: 200px;
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .app-header {
+    left: 0;
+  }
+
+  .main-content-wrapper {
+    margin-top: 95px; 
+    height: calc(100% - 60px);
+  }
+}
