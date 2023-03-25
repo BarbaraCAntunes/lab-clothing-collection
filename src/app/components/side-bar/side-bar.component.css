@@ -1,0 +1,41 @@
+.side-bar-page {
+  position: fixed;
+  left: 0;
+  height: 100vh;
+  width: 19.8%;
+  background-color: #FFFFFF;
+  box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+}
+
+.logo {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+#logo-audaces-menu {
+  max-width: 60%;
+}
+
+h4 {
+  padding-left: 10%;
+  padding-top: 25%;
+  font-size: 80%;
+  color: #B4B6C1;
+}
+
+.links-menu a {
+  display: block;
+  padding: 10%;
+  text-decoration: none;
+  color: #A4A4A4;
+  font-weight: 500;
+  font-size: 70%;
+}
+
+.dashboard-button {
+  width: 85%;
+  padding-left: 5%;
+}
+
+

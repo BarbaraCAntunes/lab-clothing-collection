@@ -1,0 +1,10 @@
+input {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-color: #f2f5ff;
+}
+
+input::placeholder {
+  color: #B4B6C1;
+  font-size: 85%;
+}
