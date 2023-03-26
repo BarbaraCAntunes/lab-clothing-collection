@@ -1,0 +1,30 @@
+<div class="main-content-home">
+  <ng-container>
+    <h4 class="dashboard-title">Dashboard</h4>
+    <div class="flex-box">
+      <div class="flex-item">
+        <app-cards-dashbord
+          [title]="'Coleções'"
+          [number]="'25'"
+        ></app-cards-dashbord>
+      </div>
+      <div class="flex-item">
+        <app-cards-dashbord
+          [title]="'Modelos'"
+          [number]="'64'"
+        ></app-cards-dashbord>
+      </div>
+      <div class="flex-item">
+        <app-cards-dashbord
+          [title]="'Orçamento Médio (R$)'"
+          [number]="'4700'"
+          [percentual]="'25%'"
+          [description]="'Comparado em 01/2023'"
+        ></app-cards-dashbord>
+      </div>
+    </div>
+    <div class="content-dashbord">
+      <app-content-dashbord></app-content-dashbord>
+    </div>
+  </ng-container>
+</div>
