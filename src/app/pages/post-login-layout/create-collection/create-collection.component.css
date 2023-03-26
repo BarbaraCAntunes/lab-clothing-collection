@@ -1,0 +1,46 @@
+.create-collection-page {
+  background-color: #f2f5ff;
+  min-height: 100vh;
+}
+
+.create-collection-title {
+  padding-top: 2%;
+  padding-bottom: 35px;
+  padding-left: 9px;
+}
+
+.create-collection-content {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  font-family: "Inter", sans-serif;
+  margin-left: 10px;
+}
+
+.flex-box{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.flex-item {
+  flex: 1;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.image {
+  max-width: 400px;
+}
