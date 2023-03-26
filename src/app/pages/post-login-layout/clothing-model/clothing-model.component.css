@@ -1,0 +1,90 @@
+.clothing-model-page {
+  background-color: #f2f5ff;
+  min-height: 100vh;
+}
+
+.flex-box {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.clothing-model-title {
+  padding-top: 4%;
+  padding-bottom: 2%;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  color: #2C2C2C;
+}
+
+.clothing-model-button {
+    max-width: 50%;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    .flex-box {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .clothing-model-title {
+      padding-bottom: 1rem;
+    }
+
+    .clothing-model-button {
+      margin-left: 0;
+      margin-bottom: 1rem;
+    }
+  }
+
+
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .clothing-model-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    font-family: "Inter", sans-serif;
+  }
+  
+  .clothing-model-table th,
+  .clothing-model-table td {
+    padding: 12px 16px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .clothing-model-table th {
+    font-weight: bold;
+  }
+  
+  .clothing-model-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .clothing-model-table thead tr th {
+    align-self: center;
+  }
+
+
+  @media (max-width: 768px) {
+    .clothing-model-table {
+      display: block;
+    }
+  
+    .clothing-model-table thead,
+    .clothing-model-table tbody {
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+    }
+  }
+  
