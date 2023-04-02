@@ -1,34 +1,48 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth-service.service';
 
 @Component({
   selector: 'app-forgot-password',
   templateUrl: './forgot-password.component.html',
-  styleUrls: ['./forgot-password.component.css']
+  styleUrls: ['./forgot-password.component.css'],
 })
 export class ForgotPasswordComponent {
-  email : string = ""
+  forgotForm!: FormGroup;
   emailNotFound: boolean = false;
   emailSent: boolean = false;
-  redefineForm : FormGroup;
-  
+  email: string = '';
+
   constructor(
-    private router: Router, 
-    private formBuilder: FormBuilder) {
-      this.redefineForm = this.formBuilder.group({
-        email: ['', Validators.required],
-      });}
-      
-      sendRecovery() {
-        this.email = this.redefineForm.get('email')?.value;
-        if (this.email === "barbaracantunes@gmail.com"){
-        this.emailSent = true;
-        this.emailNotFound = false;
-  } else {
-      this.emailNotFound = true;
-  }}
+    private router: Router,
+    private authService: AuthService,
+    private formBuilder: FormBuilder
+  ) {
+    this.forgotForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+    });
+  }
+
+  sendRecovery() {
+    if (this.forgotForm.invalid) {
+      return;
+    }
+
+    this.email = this.forgotForm.get('email')?.value;
+
+    this.authService
+      .isEmailRegistered(this.email)
+      .subscribe((isEmailRegistered) => {
+        if (isEmailRegistered) {
+          this.emailSent = true;
+          this.emailNotFound = false;
+        } else {
+          this.emailNotFound = true;
+          this.emailSent = false;
+        }
+      });
+  }
 
   goToLogin() {
     this.router.navigateByUrl('/login');
