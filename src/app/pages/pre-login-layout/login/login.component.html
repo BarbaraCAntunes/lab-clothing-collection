@@ -1,56 +1,68 @@
 <div class="login-page">
-  <div class="container">
-    <app-logo-audaces></app-logo-audaces>
-
-    <div class="row justify-content-center py-4">
-      <div class="col-lg-4 col-md-6 col-sm-8 form-container">
-        <form [formGroup]="loginForm">
-          <div class="form-group">
-            <app-title [title]="'Sing In'"></app-title>
-            <h6 class="sing-in-text">
-              Insira suas credenciais para acessar sua conta
-            </h6>
-            <app-input-label
-              [type]="'email'"
-              [id]="'inputEmail'"
-              [placeholder]="'Informe seu e-mail'"
-              (input)="onInputChange()"
-            ></app-input-label>
-            <div class="error-message" *ngIf="emailErrorMessage">
-              {{ emailErrorMessage }}
-            </div>
-          </div>
-          <div class="form-group">
-            <app-input-label
-              [type]="'password'"
-              [id]="'inputPassword'"
-              [placeholder]="'Informe sua senha'"
-              (input)="onInputChange()"
-            ></app-input-label>
-            <div class="error-message" *ngIf="passwordErrorMessage">
-              {{ passwordErrorMessage }}
-            </div>
-          </div>
-          <app-button [title]="'Entrar'" (click)="onSubmit()"></app-button>
-        </form>
-      </div>
+  <div class="container-fluid">
+    <div class="logo-audaces">
+      <app-logo-audaces></app-logo-audaces>
     </div>
 
-    <div class="row justify-content-center py-2">
-      <div class="col-lg-4 col-md-6 col-sm-8">
-        <div class="text-center">
-          <h6>
-            Esqueceu sua senha?
-            <a routerLink="/forgot-password" class="text-link">
-              <span>Redefinir senha</span>
-            </a>
+    <div class="row justify-content-center py-4">
+      <div class="col-lg-4 col-md-6 col-sm-8 form-wrapper">
+        <div class="form-group">
+          <app-title [title]="'Sign In'"></app-title>
+          <h6 class="sign-in-text">
+            Insira suas credenciais para acessar sua conta
           </h6>
-          <h6>
-            Ainda não tem uma conta?
-            <a routerLink="/register-new-user" class="text-link">
-              <span>Cadastre-se</span>
-            </a>
-          </h6>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="input-group">
+              <div class="emailInput">
+                <input
+                  class="form-control"
+                  aria-label="Informe seu e-mail"
+                  type="email"
+                  placeholder="Informe seu e-mail"
+                  formControlName="email"
+                />
+                <div class="error-msg">
+                  {{ emailErrorMessage }}
+                </div>
+              </div>
+              <div class="passwordInput">
+                <input
+                  class="form-control"
+                  aria-label="Informe sua senha"
+                  type="password"
+                  placeholder="Informe sua senha"
+                  formControlName="password"
+                />
+                <div class="error-msg">
+                  {{ passwordErrorMessage }}
+                </div>
+              </div>
+            </div>
+            <div class="onSubmit">
+              <app-blue-general-button
+                [title]="'Entrar'"
+                (click)="onSubmit()"
+              ></app-blue-general-button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row justify-content-center py-2">
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <div class="text-center">
+            <h6>
+              Esqueceu sua senha?
+              <a routerLink="/forgot-password" class="text-link">
+                <span>Redefinir senha</span>
+              </a>
+            </h6>
+            <h6>
+              Ainda não tem uma conta?
+              <a routerLink="/register-new-user" class="text-link">
+                <span>Cadastre-se</span>
+              </a>
+            </h6>
+          </div>
         </div>
       </div>
     </div>
