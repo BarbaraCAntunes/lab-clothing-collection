@@ -1,0 +1,32 @@
+<div class="card-dashboard-container">
+  <div class="card-title">
+    <h4>Orçamento Médio (R$)</h4>
+  </div>
+  <div class="flex-box">
+    <div class="flex-item">
+      <p>{{ budgetAverage }}</p>
+    </div>
+    <div class="flex-item">
+      <div class="flex-box-percentage">
+        <div class="flex-item-percentage">
+          <div class="second-col-row-percentual">
+            <div *ngIf="percentage >= 0" class="positive">
+              <p>↑ {{ percentage }} %</p>
+            </div>
+          </div>
+          <div class="flex-item-percentage">
+            <div *ngIf="percentage < 0" class="negative">
+              <p>↓ {{ percentage }} %</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        *ngIf="description"
+        class="second-col-row-description"
+      >
+        {{ description }}
+      </div>
+    </div>
+  </div>
+</div>

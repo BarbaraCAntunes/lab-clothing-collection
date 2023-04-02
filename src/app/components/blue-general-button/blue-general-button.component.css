@@ -1,0 +1,12 @@
+.btn {
+  background-color: #0073cf;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  white-space: nowrap;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 80%;
+}

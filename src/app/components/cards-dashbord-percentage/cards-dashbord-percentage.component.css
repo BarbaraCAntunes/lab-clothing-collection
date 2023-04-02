@@ -29,3 +29,28 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+.flex-box-percentage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.positive p {
+  color: green;
+  font-size: 12px;
+  font-weight: bold;
+  justify-self: right;
+}
+
+.negative p {
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+  justify-self: right;
+}
+
+.second-col-row-description {
+  color: #b4b6c1;
+  font-size: 11px;
+}
