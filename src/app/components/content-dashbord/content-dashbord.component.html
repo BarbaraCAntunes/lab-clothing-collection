@@ -11,11 +11,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row"></th>
-          <td></td>
-          <td></td>
-          <td></td>
+        <tr *ngFor="let orcamento of orcamentos">
+          <td>{{ orcamento.colecao }}</td>
+          <td>{{ orcamento.responsavel }}</td>
+          <td>{{ orcamento.modelos }}</td>
+          <td>R$ {{ orcamento.orcamento }}</td>
         </tr>
       </tbody>
     </table>

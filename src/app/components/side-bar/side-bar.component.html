@@ -1,27 +1,32 @@
 <div class="side-bar-page">
   <div class="side-menu-container">
     <div class="logo text-center">
-      <img
-        src="./assets/logo-audaces-menu.png"
-        alt="Logo Audaces"
-        class="img-fluid"
-        id="logo-audaces-menu"
-      />
+      <a routerLink="/home"
+        ><img
+          src="./assets/logo-audaces-menu.png"
+          alt="Logo Audaces"
+          class="img-fluid"
+          id="logo-audaces-menu"
+      /></a>
     </div>
     <h4 class="text-left mb-4">MENU</h4>
-    <div class="menu">
-      <div class="dashboard-button">
-        <app-button
-          routerLink="/home"
-          class="dashboard-button"
-          [title]="'Dashbord'"
-        ></app-button>
-      </div>
+    <div class="links-menu">
       <div class="links-menu">
-        <a routerLink="/collections">Coleções</a>
-        <a routerLink="/clothing-model">Modelos</a>
-        <a routerLink="/obter-ajuda">Obter Ajuda</a>
-        <a routerLink="/comentarios">Comentários</a>
+        <a routerLink="/home" [ngClass]="getButtonClass('/home')">Dashboard</a>
+        <a routerLink="/collections" [ngClass]="getButtonClass('/collections')"
+          >Coleções</a
+        >
+        <a
+          routerLink="/clothing-model"
+          [ngClass]="getButtonClass('/clothing-model')"
+          >Modelos</a
+        >
+        <a (click)="obterAjuda()" [ngClass]="getButtonClass('/obter-ajuda')"
+          >Obter Ajuda</a
+        >
+        <a (click)="comentarios()" [ngClass]="getButtonClass('/comentarios')"
+          >Comentários</a
+        >
       </div>
     </div>
   </div>
