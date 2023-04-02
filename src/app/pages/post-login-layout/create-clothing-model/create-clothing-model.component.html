@@ -1,85 +1,154 @@
 <div class="create-clothing-model-page">
   <div class="create-clothing-model-title">
-    <h4>Criar Modelo</h4>
+    <h4>Criar modelo</h4>
   </div>
+
   <div class="create-clothing-model-content">
-    <div class="flex-box">
-      <div class="flex-item">
-        <app-input-label [placeholder]="'Nome do Modelo'"></app-input-label>
-      </div>
-      <div class="flex-item">
-        <app-input-label [placeholder]="'Tipo do Modelo'"></app-input-label>
-      </div>
-    </div>
-    <div class="flex-box">
-      <div class="flex-item">
-        <app-input-label [placeholder]="'Selecionar coleção'"></app-input-label>
-      </div>
-      <div class="flex-item">
-        <app-input-label
-          [placeholder]="'Responsável pelo modelo'"
-        ></app-input-label>
-      </div>
-    </div>
-    <div class="flex-box">
-      <div class="flex-item"></div>
-      <div class="flex-item"></div>
-    </div>
-    <div class="container mt-5">
-      <form>
-        <div class="mb-3">
-          <label for="question" class="form-label">Possui bordado?</label>
+    <div class="form-responsive">
+      <form
+        [formGroup]="clothingModelForm"
+        (ngSubmit)="createClothingModel()"
+        class="form"
+      >
+        <div class="flex-box">
+          <div class="flex-item">
+            <input
+              class="form-control"
+              aria-label="Informe o nome do modelo "
+              type="name"
+              placeholder="Nome do Modelo"
+              formControlName="nome"
+            />
+            <div class="error-msg">{{ nameError }}</div>
+          </div>
+          <div class="flex-item">
+            <select
+              class="form-select"
+              name="model-type"
+              id="model-type"
+              aria-describedby="Selecione o modelo"
+              formControlName="tipo"
+            >
+              <option value="" disabled selected>Tipo de Modelo</option>
+              <option value="bermuda">Bermuda</option>
+              <option value="biquini">Biquini</option>
+              <option value="bolsa">Bolsa</option>
+              <option value="bone">Boné</option>
+              <option value="calca">Calça</option>
+              <option value="calcados">Calçados</option>
+              <option value="camisa">Camisa</option>
+              <option value="chapeu">Chapéu</option>
+              <option value="saia">Saia</option>
+            </select>
+            <div class="error-msg">{{ typeError }}</div>
+          </div>
         </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="answer"
-            id="answer1"
-            value="sim"
-          />
-          <label class="form-check-label" for="answer1"> Sim </label>
+        <div class="flex-box">
+          <div class="flex-item">
+            <select
+              class="form-select"
+              name="collection-type"
+              id="collection-type"
+              aria-describedby="Selecione a coleção"
+              formControlName="colecao"
+            >
+              <option value="" disabled selected>Selecionar coleção</option>
+              <ng-container *ngFor="let collection of collections">
+                <option [value]="collection.colecao">
+                  {{ collection.colecao }}
+                </option>
+              </ng-container>
+            </select>
+            <div class="error-msg">{{ collectionError }}</div>
+          </div>
+          <div class="flex-item">
+            <input
+              class="form-control"
+              aria-label="Informe o responsável pelo modelo "
+              type="responsavel"
+              placeholder="Responsável Modelo"
+              formControlName="responsavel"
+            />
+            <div class="error-msg">{{ responsavelError }}</div>
+          </div>
         </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="answer"
-            id="answer2"
-            value="não"
-          />
-          <label class="form-check-label" for="answer2"> Não </label>
+        <div class="radio-bullets">
+          <div class="flex-box-bullets">
+            <div class="flex-item">
+              <h1>Possui bordado?</h1>
+              <div class="error-msg">{{ bordadoError }}</div>
+              <div>
+                <div class="flex-box-option">
+                  <div class="flex-item-option">
+                    <input
+                      type="radio"
+                      id="sim"
+                      name="bordado"
+                      value="sim"
+                      formControlName="bordado"
+                    />
+                    <label for="sim">Sim</label>
+                  </div>
+                  <div>
+                    <div class="flex-item-option">
+                      <input
+                        type="radio"
+                        id="nao"
+                        name="bordado"
+                        value="nao"
+                        formControlName="bordado"
+                      />
+                      <label for="nao">Não</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-item">
+              <h1>Possui estampa?</h1>
+              <div class="error-msg">{{ estampaError }}</div>
+              <div>
+                <div class="flex-box-option">
+                  <div class="flex-item-option">
+                    <input
+                      type="radio"
+                      id="sim"
+                      name="estampa"
+                      value="sim"
+                      formControlName="estampa"
+                    />
+                    <label for="sim">Sim</label>
+                  </div>
+                  <div>
+                    <div class="flex-item-option">
+                      <input
+                        type="radio"
+                        id="nao"
+                        name="estampa"
+                        value="nao"
+                        formControlName="estampa"
+                      />
+                      <label for="nao">Não</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-box-button">
+          <div class="flex-item-button">
+            <app-grey-cancel-button (click)="cancel()"></app-grey-cancel-button>
+          </div>
+          <div class="flex-item-button">
+            <app-blue-general-button
+              [title]="'Salvar'"
+              (click)="createClothingModel()"
+            ></app-blue-general-button>
+          </div>
         </div>
       </form>
-      <form>
-        <div class="mb-3">
-          <label for="question" class="form-label">Possui estampa?</label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="answer"
-            id="answer1"
-            value="sim"
-          />
-          <label class="form-check-label" for="answer1"> Sim </label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="answer"
-            id="answer2"
-            value="não"
-          />
-          <label class="form-check-label" for="answer2"> Não </label>
-        </div>
-      </form>
-    </div>
-    <div class="buttons-create-clothing-model">
-      <app-button [title]="'Cancelar'"></app-button>
-      <app-button [title]="'Salvar'"></app-button>
     </div>
   </div>
 </div>
