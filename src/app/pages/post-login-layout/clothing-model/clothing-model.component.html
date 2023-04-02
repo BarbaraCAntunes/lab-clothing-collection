@@ -1,37 +1,39 @@
-<div class="clothing-model-page">
-  <ng-container>
-    <div class="flex-box">
-      <div class="col flex-item">
-        <h4 class="clothing-model-title">Modelos</h4>
-      </div>
-      <div class="col flex-item">
-        <div class="clothing-model-button">
-          <app-button
-            [title]="'Criar Modelo'"
-            routerLink="/create-clothing-model"
-          ></app-button>
-        </div>
-      </div>
+<div class="clothin-model-page">
+  <div class="flex-box">
+    <div class="flex-item">
+      <h4 class="clothing-model-title">Modelos</h4>
     </div>
-  </ng-container>
-  <div class="table-container">
-    <table class="clothing-model-table">
-      <thead>
-        <tr>
-          <th>ModeloID</th>
-          <th>Nome do Modelo</th>
-          <th>Responsável</th>
-          <th>Coleção</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="flex-item">
+      <app-blue-general-button
+        [title]="'Criar Modelo'"
+        routerLink="/create-clothing-model"
+        id="clothing-model-button"
+      ></app-blue-general-button>
+    </div>
+  </div>
+  <div class="clothing-model-content">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ModeloID</th>
+            <th scope="col">Nome do modelo</th>
+            <th scope="col">Responsável</th>
+            <th scope="col">Coleção</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let clothingModel of clothingModel"
+            [routerLink]="['/edit-clothing-model', clothingModel.id]"
+          >
+            <td>{{ clothingModel.id }}</td>
+            <td>{{ clothingModel.nome }}</td>
+            <td>{{ clothingModel.responsavel }}</td>
+            <td>{{ clothingModel.colecao }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
