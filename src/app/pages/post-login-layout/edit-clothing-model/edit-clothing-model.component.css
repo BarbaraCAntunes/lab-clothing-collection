@@ -1,0 +1,160 @@
+.edit-clothing-model-page {
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.edit-clothing-model-title h4 {
+  font-family: "Inter", sans-serif;
+  color: #2c2c2c;
+  font-weight: bold;
+  padding-top: 2%;
+  padding-bottom: 35px;
+  padding-left: 20px;
+}
+
+.form {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  font-family: "Inter", sans-serif;
+  padding-top: 15px;
+  padding-bottom: 30px;
+}
+
+.form-responsive {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+}
+
+.flex-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding-top: 30px;
+}
+
+.flex-item {
+  flex: 1;
+  padding-left: 40px;
+  padding-right: 55px;
+}
+
+.flex-item h1 {
+  color: #a098ae;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+}
+
+.flex-box-bullets {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-bottom: 150px;
+}
+
+.flex-box-option {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.flex-item-option {
+  padding-top: 20px;
+  padding-right: 50px;
+}
+
+.flex-item-option label {
+  font-family: "Inter", sans-serif;
+  color: #9395a3;
+  font-size: 14px;
+}
+
+.flex-item input {
+  border-color: #f2f5ff;
+}
+
+.flex-item input::placeholder {
+  font-family: "Inter", sans-serif;
+  color: #b4b6c1;
+  font-size: 14px;
+}
+
+.flex-box-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-left: 400px;
+  padding-right: 60px;
+}
+
+.form-select option {
+  font-family: "Inter", sans-serif;
+  color: #b4b6c1;
+  font-size: 14px;
+}
+
+select {
+  color: #b4b6c1;
+  font-size: 14px;
+  padding: 9px;
+  border-color: #f2f5ff;
+}
+
+.flex-item-button {
+  flex: 1;
+  width: 50%;
+  padding-left: 50px;
+  padding-bottom: 15px;
+}
+
+.flex-box-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 50px;
+}
+
+.flex-box-button-right {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.flex-item-right {
+  flex: 1;
+}
+
+.flex-box-button {
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+  padding-left: 40px;
+}
+
+.flex-item-button-delete {
+  flex: 0.18;
+}
+
+.flex-item-button-save {
+  flex: 0.4;
+}
+
+.flex-item input {
+  border-color: #f2f5ff;
+  color: #b4b6c1;
+  font-size: 13px;
+  font-family: "Inter", sans-serif;
+  padding: 10px;
+}
+
+.error-msg {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
