@@ -1,0 +1,106 @@
+<div class="edit-collection-page">
+  <div class="container-fluid">
+    <div class="edit-collection-title">
+      <h4>Editar coleção</h4>
+    </div>
+
+    <div class="edit-collection-content">
+      <div class="form-responsive">
+        <form [formGroup]="collectionForm" (ngSubmit)="editCollection()">
+          <div class="flex-box">
+            <div class="flex-item">
+              <input
+                class="form-control"
+                aria-label="Informe o nome da coleção"
+                type="name"
+                placeholder="Nome da Coleção"
+                formControlName="colecao"
+              />
+              <div class="error-msg">{{ nameError }}</div>
+            </div>
+            <div class="flex-item">
+              <input
+                class="form-control"
+                aria-label="Informe o responsável pela coleção"
+                type="responsavel"
+                placeholder="Reponsável pela Coleção"
+                formControlName="responsavel"
+              />
+              <div class="error-msg">{{ responsavelError }}</div>
+            </div>
+          </div>
+          <div class="flex-box">
+            <div class="flex-item">
+              <input
+                class="form-control"
+                aria-label="Informe para qual estação"
+                type="estacao"
+                placeholder="Para qual estação"
+                formControlName="estacao"
+              />
+              <div class="error-msg">{{ estacaoError }}</div>
+            </div>
+            <div class="flex-item">
+              <input
+                class="form-control"
+                aria-label="Informe para qual marca você está criando"
+                type="marca"
+                placeholder="Para qual marca você está criando?"
+                formControlName="marca"
+              />
+              <div class="error-msg">{{ marcaError }}</div>
+            </div>
+          </div>
+          <div class="flex-box">
+            <div class="flex-item">
+              <input
+                class="form-control"
+                aria-label="Informe o orçamento dessa coleção"
+                type="orcamento"
+                placeholder="Qual é o orçamento desta coleção?"
+                formControlName="orcamento"
+              />
+              <div class="error-msg">{{ orcamentoError }}</div>
+            </div>
+            <div class="flex-item">
+              <input
+                class="form-control"
+                aria-label="Informe o ano de lançamento da coleção"
+                type="anoLancamento"
+                placeholder="Ano de Lançamento"
+                formControlName="anoLancamento"
+              />
+              <div class="error-msg">{{ anoLancamentoError }}</div>
+            </div>
+          </div>
+          <div class="image-container">
+            <img class="image" src="./assets/create-collection-image.png" />
+          </div>
+          <div class="flex-box-button">
+            <div class="flex-item-button-delete">
+              <app-red-delete-button
+                [title]="'Excluir'"
+                (click)="deleteCollection()"
+              ></app-red-delete-button>
+            </div>
+            <div class="flex-item-button-save">
+              <div class="flex-box-button-right">
+                <div class="flex-item-right">
+                  <app-grey-cancel-button
+                    (click)="cancel()"
+                  ></app-grey-cancel-button>
+                </div>
+                <div class="flex-item-right">
+                  <app-blue-general-button
+                    [title]="'Salvar'"
+                    (click)="editCollection()"
+                  ></app-blue-general-button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
