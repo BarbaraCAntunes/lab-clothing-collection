@@ -1,15 +1,18 @@
 .create-collection-page {
-  background-color: #f2f5ff;
+  background-color: #f9f9f9;
   min-height: 100vh;
 }
 
-.create-collection-title {
+.create-collection-title h4 {
+  font-family: "Inter", sans-serif;
+  color: #2c2c2c;
+  font-weight: bold;
   padding-top: 2%;
   padding-bottom: 35px;
-  padding-left: 9px;
+  padding-left: 20px;
 }
 
-.create-collection-content {
+.form-responsive {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
@@ -17,19 +20,21 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   font-family: "Inter", sans-serif;
-  margin-left: 10px;
+  padding-top: 15px;
+  padding-bottom: 30px;
 }
 
-.flex-box{
+.flex-box {
   display: flex;
+  flex-direction: row;
   flex-wrap: nowrap;
   width: 100%;
 }
 
 .flex-item {
   flex: 1;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding-left: 40px;
+  padding-right: 55px;
 }
 
 .image-container {
@@ -38,9 +43,40 @@
   align-items: center;
   width: 100%;
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
 }
 
 .image {
-  max-width: 400px;
+  max-width: 300px;
+}
+
+.flex-box-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-left: 400px;
+  padding-right: 60px;
+}
+
+.flex-item-button {
+  flex: 0.4;
+  width: 50%;
+  padding-left: 50px;
+}
+
+.flex-item input {
+  margin-top: 15px;
+  border-color: #f2f5ff;
+}
+
+.flex-item input::placeholder {
+  color: #b4b6c1;
+  font-size: 13px;
+  font-family: "Inter", sans-serif;
+}
+
+.error-msg {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
 }
