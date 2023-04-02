@@ -1,37 +1,41 @@
 <div class="collections-page">
-  <ng-container>
-    <div class="flex-box">
-      <div class="col flex-item">
-        <h4 class="collections-title">Coleções</h4>
-      </div>
-      <div class="col flex-item">
-        <div class="collection-button">
-          <app-button
-            [title]="'Criar Coleção'"
-            routerLink="/create-collection"
-          ></app-button>
-        </div>
-      </div>
+  <div class="flex-box">
+    <div class="flex-item">
+      <h4 class="collections-title">Coleções</h4>
     </div>
-  </ng-container>
-  <div class="table-container">
-    <table class="collection-table">
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th>Tamanho</th>
-          <th>Cor</th>
-          <th>Preço</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="flex-item">
+      <app-blue-general-button
+        [title]="'Criar Coleção'"
+        routerLink="/create-collection"
+        id="collection-button"
+      ></app-blue-general-button>
+    </div>
+  </div>
+  <div class="collection-content">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Coleção</th>
+            <th scope="col">Responsável</th>
+            <th scope="col">Estação - Lançamento</th>
+            <th scope="col">Modelos</th>
+            <th scope="col">Orçamento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let collection of collection"
+            [routerLink]="['/edit-collection', collection.id]"
+          >
+            <td>{{ collection.colecao }}</td>
+            <td>{{ collection.responsavel }}</td>
+            <td>{{ collection.estacao }} - {{ collection.anoLancamento }}</td>
+            <td>{{ collection.modelos }}</td>
+            <td>R$ {{ collection.orcamento }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
