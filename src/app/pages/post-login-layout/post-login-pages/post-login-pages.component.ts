@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-post-login-pages',
   templateUrl: './post-login-pages.component.html',
-  styleUrls: ['./post-login-pages.component.css']
+  styleUrls: ['./post-login-pages.component.css'],
 })
 export class PostLoginPagesComponent implements OnInit {
   path: string;
@@ -14,9 +14,8 @@ export class PostLoginPagesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.url.subscribe(url => {
+    this.activatedRoute.url.subscribe((url) => {
       this.path = url[0]?.path || '';
     });
   }
-
 }
