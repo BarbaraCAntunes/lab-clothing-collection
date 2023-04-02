@@ -1,119 +1,100 @@
 <div class="register-new-user-page">
   <div class="container-fluid">
-    <div class="row justify-content-center">
-      <div class="col-sm-4 col-md-3 text-center" id="div-logo-audaces">
-        <img
-          src="../assets/logo-audaces.png"
-          alt="Audaces"
-          title="Audaces"
-          class="img-fluid"
-          id="logo-audaces"
-        />
-      </div>
+    <div class="logo-audaces">
+      <app-logo-audaces></app-logo-audaces>
     </div>
 
     <div class="row justify-content-center py-4">
-      <div class="col-lg-4 col-md-6 col-sm-8" id="form-container">
-        <form [formGroup]="registerForm" id="form-container">
-          <div class="form-group">
-            <h4 id="sign-up">Sign Up</h4>
-            <h6 id="sing-up-text">Insira seus dados para criar uma conta</h6>
-            <input
-              type="name"
-              class="form-control"
-              id="inputName"
-              formControlName="name"
-              placeholder="Nome"
-              required
-            />
-            <div
-              *ngIf="
-                registerForm.get('email')?.touched &&
-                registerForm.get('email')?.invalid
-              "
-              class="error-message"
-            >
-              Campo e-mail é obrigatório
+      <div class="col-lg-4 col-md-6 col-sm-8 form-wrapper">
+        <div class="form-group">
+          <div class="flex-box">
+            <div class="arrow-left">
+              <app-arrow-left [routerLink]="'/login'"></app-arrow-left>
             </div>
-          </div>
-          <div class="form-group">
-            <input
-              type="company"
-              class="form-control"
-              id="inputCompany"
-              formControlName="company"
-              placeholder="Empresa"
-              required
-            />
-          </div>
-          <div
-            *ngIf="
-              registerForm.get('password')?.touched &&
-              registerForm.get('password')?.invalid
-            "
-            class="error-message"
-          >
-            Campo senha é obrigatório
-          </div>
-          <div class="form-group">
-            <input
-              type="cnpj"
-              class="form-control"
-              id="inputCnpj"
-              formControlName="cnpj"
-              placeholder="CNPJ"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <input
-              type="email"
-              class="form-control"
-              id="inputEmail"
-              formControlName="email"
-              placeholder="Informe seu e-mail"
-              required
-            />
-          </div>
-          <div class="password-inputs">
-            <div class="form-group">
-              <input
-                type="password"
-                class="form-control"
-                id="inputPassword"
-                formControlName="password"
-                placeholder="Senha"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <input
-                type="password"
-                class="form-control"
-                id="inputConfirmPassword"
-                formControlName="inputConfirmPassword"
-                placeholder="Confirmar senha"
-                required
-              />
+            <div class="title-register-new-user">
+              <app-title [title]="'Sign Up'"></app-title>
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block">
-            Criar conta
-          </button>
-        </form>
+          <form [formGroup]="registerForm" (ngSubmit)="registerNewUser()">
+            <div class="register-new-user-text-content">
+              <h6>Insira seus dados para criar uma conta</h6>
+              <input
+                class="form-control"
+                aria-label="Informe seu nome"
+                type="name"
+                placeholder="Nome"
+                formControlName="name"
+              />
+              <div class="error-msg">{{ nameError }}</div>
+              <input
+                class="form-control"
+                aria-label="Informe sua empresa"
+                type="name"
+                placeholder="Empresa"
+                formControlName="company"
+              />
+              <div class="error-msg">{{ companyError }}</div>
+              <input
+                class="form-control"
+                aria-label="Informe seu CNPJ"
+                type="cnpj"
+                placeholder="CNPJ"
+                formControlName="cnpj"
+              />
+              <div class="error-msg">{{ cnpjError }}</div>
+              <input
+                class="form-control"
+                aria-label="Informe seu e-mail"
+                type="email"
+                placeholder="Informe seu e-mail"
+                formControlName="email"
+              />
+              <div class="error-msg">{{ emailError }}</div>
+              <div class="flex-box-password">
+                <div class="flex-item-password">
+                  <input
+                    class="form-control"
+                    aria-label="Digite uma senha"
+                    type="password"
+                    placeholder="Senha"
+                    formControlName="password"
+                  />
+                  <div class="error-msg">{{ passwordError }}</div>
+                </div>
+                <div class="flex-item-password">
+                  <input
+                    class="form-control"
+                    aria-label="Confirme sua senha"
+                    type="password"
+                    placeholder="Confirmar senha"
+                    formControlName="confirmPassword"
+                  />
+                  <div class="error-msg">{{ confirmPasswordError }}</div>
+                </div>
+              </div>
+
+              <app-blue-general-button
+                class="button"
+                [title]="'Criar Conta'"
+                type="submit"
+                (click)="registerNewUser()"
+              ></app-blue-general-button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
 
-    <div class="row justify-content-center py-2">
-      <div class="col-lg-4 col-md-6 col-sm-8">
-        <div class="text-center">
-          <h6>
-            Já possui uma conta?
-            <a routerLink="/login" class="text-muted"
-              ><span style="color: #277ffe">Realizar login</span></a
-            >
-          </h6>
+      <div class="row justify-content-center py-2">
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <div class="login-link">
+            <h6>
+              Já possui uma conta?
+              <a routerLink="/login" class="text-muted"
+                ><span style="color: #277ffe">Realizar login</span></a
+              >
+            </h6>
+          </div>
         </div>
       </div>
     </div>

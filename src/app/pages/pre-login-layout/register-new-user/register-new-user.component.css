@@ -4,76 +4,70 @@
   font-family: "Inter", sans-serif;
 }
 
-#logo-audaces {
-  max-width: 35px;
-  margin-top: 4%;
-}
-
-#div-logo-audaces {
-  width: 100%;
-}
-
-#form-container {
+.form-wrapper {
   background-color: white;
-  padding: 4%;
+  padding: 40px;
   border-radius: 10px;
 }
 
-.form-group h4 {
-  color: #304C71;
-  font-weight: 600;
-  text-align: center;
-  padding-bottom: 2%;
+.flex-box {
+  display: flex;
+  flex-direction: row;
 }
 
-.form-group h6 {
-  color: #B4B6C1;
+.flex-box-password {
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.flex-item-password {
+  flex: 1;
+}
+
+.title-register-new-user {
+  padding-left: 90px;
+}
+
+.register-new-user-text-content h6 {
+  color: #b4b6c1;
   font-weight: 400;
-  font-size: 86%;
-  padding-bottom: 5%;
+  font-size: 14px;
+  padding-bottom: 20px;
   text-align: center;
 }
 
-.form-group input {
-  margin-top: 5%;
-  margin-bottom: 5%;
-  border-color: #f2f5ff;
-}
-
-.form-group input::placeholder {
-  color: #B4B6C1;
-  font-size: 85%;
-}
-
-.btn {
-  background-color: #0073CF;
-  width: 100%;
-  font-weight: bold;
-  margin-top: 5%;
-  padding: 3%;
-}
-
-.text-center h6 {
+.login-link h6 {
+  padding-top: 10px;
   color: #989898;
-  font-size: 86%;
+  font-size: 14px;
+  text-align: center;
 }
 
-.text-center h6 a {
+.login-link h6 a {
   text-decoration: none;
   font-weight: bold;
 }
 
-.error-message {
+.register-new-user-text-content input {
+  margin-top: 15px;
+  border-color: #f2f5ff;
+}
+
+.register-new-user-text-content input::placeholder {
+  color: #b4b6c1;
+  font-size: 13px;
+  font-family: "Inter", sans-serif;
+}
+
+.error-msg {
   color: red;
   font-size: 12px;
   margin-top: 5px;
 }
 
-.password-inputs {
-  display: flex;
-  flex-direction: row;
-  gap: 3%;
-  padding-bottom: 4%;
+.button {
+  padding-top: 30px;
+  width: 100%;
 }
-
-
