@@ -1,24 +1,137 @@
 {
-  "modelos": [
+  "usuarios": [
     {
       "id": 1,
-      "nome": "Modelo 1",
-      "colecao": 1
+      "nome": "Barbara Antunes",
+      "empresa": "Audaces",
+      "cnpj": 12345678912345,
+      "email": "barbaracantunes@audaces.com.br",
+      "senha": "12345678"
     },
     {
       "id": 2,
-      "nome": "Modelo 2",
-      "colecao": 1
+      "nome": "Yan Esteves",
+      "empresa": "Audaces",
+      "cnpj": 12345678912345,
+      "email": "prof_yan@audaces.com.br",
+      "senha": "12345678"
+    },
+    {
+      "id": 3,
+      "nome": "Thaís Passos",
+      "empresa": "Audaces Ltda",
+      "cnpj": "12345648961234",
+      "email": "passosthais@live.com",
+      "senha": "12345678"
     }
   ],
   "colecoes": [
     {
       "id": 1,
-      "nome": "Coleção 1"
+      "colecao": "Adidas",
+      "responsavel": "Barbara Antunes",
+      "estacao": "Verão",
+      "marca": "Adidas",
+      "modelos": [
+        1
+      ],
+      "orcamento": 9500,
+      "anoLancamento": 2023
     },
     {
       "id": 2,
-      "nome": "Coleção 2"
+      "colecao": "Renner",
+      "responsavel": "Barbara Antunes",
+      "estacao": "Outono",
+      "marca": "Renner",
+      "modelos": [
+        1
+      ],
+      "orcamento": 3500,
+      "anoLancamento": 2022
+    },
+    {
+      "id": 3,
+      "colecao": "PatBO",
+      "responsavel": "Barbara Antunes",
+      "estacao": "Primavera",
+      "marca": "PatBO",
+      "modelos": [
+        1
+      ],
+      "orcamento": 8700,
+      "anoLancamento": 2020
+    },
+    {
+      "id": 4,
+      "colecao": "Nike",
+      "responsavel": "Barbara Antunes",
+      "estacao": "Verão",
+      "marca": "Nike",
+      "modelos": [
+        1
+      ],
+      "orcamento": 9100,
+      "anoLancamento": 2023
+    },
+    {
+      "id": 5,
+      "colecao": "Puma",
+      "responsavel": "Barbara Anutnes",
+      "estacao": "Primavera",
+      "marca": "Puma",
+      "modelos": [
+        1
+      ],
+      "orcamento": 5700,
+      "anoLancamento": 2022
+    }
+  ],
+  "modelos": [
+    {
+      "id": 1,
+      "nome": "Camisa Sport",
+      "tipo": "Camisa",
+      "responsavel": "Barbara Antunes",
+      "colecao": "Adidas",
+      "bordado": "sim",
+      "estampa": "não"
+    },
+    {
+      "id": 2,
+      "nome": "Shorts e Bermudas",
+      "tipo": "Bermuda",
+      "responsavel": "Barbara Antunes",
+      "colecao": "Renner",
+      "bordado": "não",
+      "estampa": "sim"
+    },
+    {
+      "id": 3,
+      "nome": "Saia Casual",
+      "tipo": "saia",
+      "responsavel": "Barbara Anutnes",
+      "colecao": "PatBO",
+      "bordado": "não",
+      "estampa": "não"
+    },
+    {
+      "id": 4,
+      "nome": "Calça Legging",
+      "tipo": "Calça",
+      "responsavel": "Barbara Antunes",
+      "colecao": "Nike",
+      "bordado": "não",
+      "estampa": "não"
+    },
+    {
+      "id": 5,
+      "nome": "Biquini",
+      "tipo": "Biquini",
+      "responsavel": "Barbara Antunes",
+      "colecao": "Puma",
+      "bordado": "não",
+      "estampa": "sim"
     }
   ]
 }
