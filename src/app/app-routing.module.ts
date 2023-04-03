@@ -7,25 +7,51 @@ import { ForgotPasswordComponent } from './pages/pre-login-layout/forgot-passwor
 import { RegisterNewUserComponent } from './pages/pre-login-layout/register-new-user/register-new-user.component';
 import { PostLoginPagesComponent } from './pages/post-login-layout/post-login-pages/post-login-pages.component';
 
-
 const routes: Routes = [
-  { path: '', component: PreLoginPagesComponent},
-  {path: 'login', component : PreLoginPagesComponent}, 
-  {path: 'forgot-password', component: PreLoginPagesComponent},
-  {path: 'register-new-user', component: PreLoginPagesComponent},
-  {path: 'home', component: PostLoginPagesComponent},
-  {path: 'collections', component: PostLoginPagesComponent},
-  {path: 'clothing-model', component: PostLoginPagesComponent},
-  {path: 'create-collection', component: PostLoginPagesComponent},
-  {path: 'create-clothing-model', component: PostLoginPagesComponent},
-  {path: 'edit-clothing-model', component: PostLoginPagesComponent},
-  {path: 'edit-collection', component: PostLoginPagesComponent},
-
-  ]
-  ;
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: PreLoginPagesComponent },
+  { path: 'forgot-password', component: PreLoginPagesComponent },
+  { path: 'register-new-user', component: PreLoginPagesComponent },
+  {
+    path: 'home',
+    component: PostLoginPagesComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'collections',
+    component: PostLoginPagesComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'clothing-model',
+    component: PostLoginPagesComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'create-collection',
+    component: PostLoginPagesComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'create-clothing-model',
+    component: PostLoginPagesComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'edit-clothing-model/:id',
+    component: PostLoginPagesComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'edit-collection/:id',
+    component: PostLoginPagesComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: '**', redirectTo: '/home' },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

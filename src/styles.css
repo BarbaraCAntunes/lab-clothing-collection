@@ -1,2 +1,7 @@
-@import "~bootstrap-icons/font/bootstrap-icons.css";
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
 
+@import "~bootstrap-icons/font/bootstrap-icons.css";

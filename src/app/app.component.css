@@ -40,7 +40,6 @@
   overflow-y: auto;
 }
 
-
 @media (max-width: 768px) {
   .side-bar {
     position: absolute;
@@ -58,7 +57,7 @@
   }
 
   .main-content {
-    margin-top: 95px; 
+    margin-top: 95px;
     height: calc(100% - 60px);
   }
 }
